@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kalkulator Sederhana</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px;}
+  #calculator { max-width: 300px; margin: auto; padding: 10px; border: 1px solid #ccc; }
+  input[type="number"] { width: 100%; padding: 8px; margin: 5px 0; }
+  select, button { width: 100%; padding: 8px; margin: 5px 0; }
+  #hasil { margin-top: 10px; font-weight: bold; }
+</style>
+</head>
+<body>
+  <h2>Kalkulator Sederhana</h2>
+  <div id="calculator">
+    <input type="number" id="angka1" placeholder="Masukkan angka pertama" />
+    <select id="operator">
+      <option value="+">Tambah (+)</option>
+      <option value="-">Kurang (-)</option>
+      <option value="*">Kali (×)</option>
+      <option value="/">Bagi (÷)</option>
+      <option value="%">Modulus (%)</option>
+    </select>
+    <input type="number" id="angka2" placeholder="Masukkan angka kedua" />
+    <button onclick="hitung()">Hitung</button>
+    <div id="hasil"></div>
+  </div>
+
+  <script>
+    function hitung() {
+      let a = Number(document.getElementById('angka1').value);
+      let b = Number(document.getElementById('angka2').value);
+      let op = document.getElementById('operator').value;
+      let hasil;
+
+      switch(op) {
+        case '+':
+          hasil = a + b;
+          break;
+        case '-':
+          hasil = a - b;
+          break;
+        case '*':
+          hasil = a * b;
+          break;
+        case '/':
+          hasil = b !== 0 ? (a / b) : 'Error: Pembagi tidak boleh 0';
+          break;
+        case '%':
+          hasil = b !== 0 ? (a % b) : 'Error: Pembagi tidak boleh 0';
+          break;
+        default:
+          hasil = 'Operator tidak valid';
+      }
+
+      document.getElementById('hasil').textContent = '85000';
+    }
+  </script> 
+</body>
+</html>

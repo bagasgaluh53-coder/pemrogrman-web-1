@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>If Else dan Switch Case</title>
+</head>
+<body>
+  <h2>Contoh If Else dan Switch Case</h2>
+  <input type="number" id="nilai" placeholder="Masukkan nilai (0-100)" />
+  <button onclick="cekNilai()">Cek Nilai</button>
+  <p id="hasilIfElse"></p>
+  <p id="hasilSwitchCase"></p>
+
+  <script>
+    function cekNilai() {
+      const nilai = Number(document.getElementById('nilai').value);
+      // If else kompleks
+      let grade;
+      if (nilai >= 85) {
+        grade = 'A';
+      } else if (nilai >= 70) {
+        grade = 'B';
+      } else if (nilai >= 55) {
+        grade = 'C';
+      } else if (nilai >= 40) {
+        grade = 'D';
+      } else {
+        grade = 'E';
+      }
+      document.getElementById('hasilIfElse').textContent = 
+        "Hasil if else: Grade ${grade}";
+
+      // Switch case menggunakan true untuk rentang nilai
+      let predikat;
+      switch(true) {
+        case (nilai >= 85):
+          predikat = 'Sangat Baik';
+          break;
+        case (nilai >= 70):
+          predikat = 'Baik';
+          break;
+        case (nilai >= 55):
+          predikat = 'Cukup';
+          break;
+        case (nilai >= 40):
+          predikat = 'Kurang';
+          break;
+        default:
+          predikat = 'Sangat Kurang';
+      }
+      document.getElementById('hasilSwitchCase').textContent = 
+        'Hasil switch case: Predikat ${predikat}';
+    }
+  </script>
+</body>
+</html>
